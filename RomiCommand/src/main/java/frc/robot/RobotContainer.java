@@ -23,9 +23,9 @@ public class RobotContainer {
   private final XboxController m_XboxController = new XboxController(0);
   private final RomiGyro m_RomiGyro = new RomiGyro();
 
-  private final BalanceRomi m_BalanceRomi = new BalanceRomi(m_RomiDrivetrain, m_RomiGyro, 15);
   private final MoveForward m_MoveForward = new MoveForward(m_RomiDrivetrain, 10);
   private final MoveWithController m_MoveWithController = new MoveWithController(m_RomiDrivetrain, m_XboxController);
+  private final PIDStraight m_PIDStraight = new PIDStraight(m_RomiDrivetrain, m_RomiGyro);
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
@@ -48,6 +48,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return m_MoveForward.andThen(m_MoveWithController);
+    return m_PIDStraight;
   }
 }

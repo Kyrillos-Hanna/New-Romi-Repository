@@ -25,7 +25,7 @@ public class RobotContainer {
 
   private final MoveForward m_MoveForward = new MoveForward(m_RomiDrivetrain, 10);
   private final MoveWithController m_MoveWithController = new MoveWithController(m_RomiDrivetrain, m_XboxController);
-  private final PIDStraight m_PIDStraight = new PIDStraight(m_RomiDrivetrain, m_RomiGyro);
+  private final PIDStraight m_PIDStraight = new PIDStraight(m_RomiDrivetrain);
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
